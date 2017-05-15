@@ -122,8 +122,9 @@ class LogStash::Inputs::File < LogStash::Inputs::Base
 
   # Choose where Logstash starts initially reading files: at the beginning or
   # at the end. The default behavior treats files like live streams and thus
-  # starts at the end. If you have old data you want to import, set this
-  # to 'beginning'.
+  # starts at the end. If you have existing data you want to import, set this
+  # to 'beginning'. The existing data will be added first, then followed by new 
+  # content.
   #
   # This option only modifies "first contact" situations where a file
   # is new and not seen before, i.e. files that don't have a current
